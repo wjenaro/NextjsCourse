@@ -24,10 +24,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <header className="bg-gray-900 text-white p-4 flex justify-between items-center">
+          <h1 className="text-xl font-bold">Webychain</h1>
+          <nav>
+            <ul className="flex space-x-4">
+              <li><a href="#" className="hover:underline">Home</a></li>
+              <li><a href="#" className="hover:underline">About</a></li>
+              <li><a href="#" className="hover:underline">Services</a></li>
+              <li><a href="#" className="hover:underline">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main className="p-4">{children}</main>
+        <footer className="bg-gray-900 text-white text-center p-4 mt-4">
+          <p>&copy; {new Date().getFullYear()} Webychain. All rights reserved.</p>
+        </footer>
       </body>
     </html>
   );
